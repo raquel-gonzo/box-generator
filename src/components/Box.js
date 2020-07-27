@@ -1,18 +1,21 @@
 
-import React, {useState} from 'react';
+import React from 'react';
 
 const Box = props => {
-    console.log(props.color)
+    console.log("this is props");
+    console.log(props);
     
     const boxStyle = {
+        display: "inline-block",
+        margin: "4px",
         backgroundColor: props.color,
         height: '100px',
         width: '100px'
     };
 
     return (
-        <div style={boxStyle}>
-        </div>
+        <span style={boxStyle}>
+        </span>
     )
 }
 

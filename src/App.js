@@ -11,21 +11,23 @@ function App() {
   // in the html, render all the boxes in that array
 
   // adds the box to the boxes array
-  const makeBox = (color) => {
-    console.log("makeBox called");
-    console.log(color);
-
-    // return (
-    //   <Box />
-    // )
+  const makeBox = (color, input) => {    
+    setBoxes([
+      ...boxes,
+      color
+    ])
+    input.value = "";
   }
-
 
   return (
     <div className="App">
       <div id='container'>
         <Input makeBox={makeBox}/>
-        <Box color="red"/>
+        {
+          boxes.map((color, index) => {
+            return <Box key={index} color={color}/>
+          })
+        }
       </div>
     </div>
   );
